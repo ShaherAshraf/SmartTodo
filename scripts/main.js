@@ -650,6 +650,10 @@ window.addEventListener('DOMContentLoaded', () => {
   configBtn.addEventListener('click', () => {
     configSection = document.querySelector('.config');
     configSection.classList.toggle('display-block');
+    /* For Safari */
+    document.body.scrollTop = 0;
+    /* For Chrome, Firefox, IE and Opera */
+    document.documentElement.scrollTop = 0;
   });
 
   // toggle the controlSound();
@@ -690,6 +694,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // show/hide of addBtn & scrollTopBtn
   window.addEventListener('scroll', () => {
+    console.log(window.pageYOffset);
     if (window.pageYOffset >= 400) {
       addBtn.style.display = `block`;
     } else {
@@ -701,5 +706,14 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       scrollTopBtn.style.display = `none`;
     }
+  });
+
+  // scrolling to tasks section
+  scrollDownBtn.addEventListener('click', () => {
+    window.scrollTo(0, 700);
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo(0, 700);
   });
 });
