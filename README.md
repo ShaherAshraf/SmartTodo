@@ -19,7 +19,7 @@ This is a fully responsive mobile-friendly todo list app which is awesome and ea
 Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
-- Make a use of the app's basic CRUD operations & enjoy a good user experience through it's another features like sound effects, two light modes & the support of two languages.
+- Make a use of the app's basic CRUD operations & enjoy a good user experience through it's other features like sound effects, two light modes & the support of two languages.
 
 ### Screenshot
 
