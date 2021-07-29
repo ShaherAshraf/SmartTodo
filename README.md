@@ -10,6 +10,7 @@ This is a fully responsive mobile-friendly todo list app which is awesome and ea
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+- [Notes](#notes)
 - [Author](#author)
 
 ## Overview
@@ -39,7 +40,7 @@ Users should be able to:
 - Vanilla JavaScript
 - HTML Web Storage API (localStorage Object)
 
-### Notes
+## Notes
 
 - All colors custom properties in the style sheet or icon names in the images/icons folder don't match its true name of color but reverse that matches the screen light mode being used.
 - Specifying a background image to the body tag causes a jumping issue while scrolling the page through mobile devices, so I used background color instead.
