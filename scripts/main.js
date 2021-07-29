@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
   body = document.querySelector('body');
   header = document.querySelector('.header');
   logo = document.querySelector('.logo');
-  main = document.querySelector('main');
   heroSection = document.querySelector('.hero');
   configBtn = document.querySelector('.cog-icon');
   configOptions = document.querySelectorAll('.cog li');
@@ -23,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   heroHeadline = document.querySelector('.hero__headline');
   heroSubHeadline = document.querySelector('.hero__sub-headline');
   scrollDownBtn = document.querySelector('.down-arrow');
+  tasksSection = document.querySelector('.tasks');
   tasksHeadline = document.querySelector('.tasks__headline');
   tasksSubHeadline = document.querySelector('.tasks__sub-headline');
   addBtn = document.querySelector('.add-icon');
@@ -365,9 +365,18 @@ window.addEventListener('DOMContentLoaded', () => {
     handleUserConfig(body.dataset.sound, mode, body.dataset.lang);
     /* restyling the elements */
     body.style.color = `var(--clr-txt-${mode})`;
-    header.style.backgroundImage = `url(/images/${mode}-background.svg)`;
+    if (mode == 'dark') {
+      body.style.backgroundColor = `var(--clr-txt-pink)`;
+      header.style.backgroundColor = `var(--clr-txt-pink)`;
+    }
+    if (mode == 'pink') {
+      body.style.backgroundColor = `var(--clr-txt-dark)`;
+      header.style.backgroundColor = `var(--clr-txt-dark)`;
+    }
+    /* background jumping issue while scrolling mobile phones
+     body.style.backgroundImage = `url(/images/${mode}-background.svg)`;
+     header.style.backgroundImage = `url(/images/${mode}-background.svg)`; */
     logo.src = `/images/icons/logo-${mode}.svg`;
-    main.style.backgroundImage = `url(/images/${mode}-background.svg)`;
     configBtn.style.backgroundImage = `url(/images/icons/cog-${mode}.svg)`;
     audioBtns[0].style.backgroundImage = `url(/images/icons/volume-${body.dataset.sound}-${mode}.svg)`;
     mobAudioBtn.style.backgroundImage = `url(/images/icons/volume-${body.dataset.sound}-mobile-${mode}.svg)`;
@@ -709,10 +718,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // scrolling to tasks section
   scrollDownBtn.addEventListener('click', () => {
-    window.scrollTo(0, 700);
+    tasksSection.scrollIntoView();
   });
 
   scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo(0, 700);
+    tasksSection.scrollIntoView();
   });
 });

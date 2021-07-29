@@ -74,6 +74,10 @@ body {
   font-size: 1.6rem;
   font-family: var(--main-font);
   color: var(--clr-txt-pink);
+  background-color: var(--clr-badge-dark);
+  /* background jumping issue while scrolling mobile phones
+   background: url(/images/pink-background.svg) no-repeat center center fixed;
+  background-size: cover; */
 }
 
 /* [COM]= Common Formatting 
@@ -158,7 +162,8 @@ input[type='submit'] {
   top: 0;
   left: 0;
   z-index: 2;
-  background: url(/images/pink-background.svg);
+  background-color: var(--clr-badge-dark);
+  /* background: url(/images/pink-background.svg); */
 }
 
 .header .wrapper {
@@ -178,11 +183,6 @@ input[type='submit'] {
 
 /* [CON]= Content 
 ========================================== */
-main {
-  background: url(/images/pink-background.svg);
-  background-attachment: fixed;
-}
-
 section {
   padding: var(--p-v-section);
   min-height: 100vh;
