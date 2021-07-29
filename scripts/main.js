@@ -694,7 +694,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // show/hide of addBtn & scrollTopBtn
   window.addEventListener('scroll', () => {
-    console.log(window.pageYOffset);
     if (window.pageYOffset >= 400) {
       addBtn.style.display = `block`;
     } else {
