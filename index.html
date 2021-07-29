@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Todo</title>
+    <link
+      rel="shortcut icon"
+      href="/images/icons/fav-icon.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="/scripts/main.js"></script>
+  </head>
+  <body data-mode="" data-sound="" data-lang="" id="body">
+    <!-- Main Header -->
+    <header class="header">
+      <div class="wrapper">
+        <a href="/">
+          <img class="logo" src="/images/icons/logo-pink.svg" alt="logo" />
+        </a>
+        <a class="cog-icon icon icon-md" href="#body"></a>
+        <div class="desktop-cog">
+          <ul class="cog">
+            <li class="volume-icon icon icon-md"></li>
+            <li class="mode-icon icon icon-md"></li>
+            <li class="lang lang-ar icon">ar</li>
+            <li class="lang lang-en icon">en</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+      <!-- Configuration -->
+      <section class="config" id="config">
+        <div class="wrapper">
+          <ul class="cog">
+            <li class="volume-icon icon icon-xlg"></li>
+            <li class="mode-icon icon icon-xlg"></li>
+            <li class="lang lang-ar icon">ar</li>
+            <li class="lang lang-en icon">en</li>
+          </ul>
+        </div>
+      </section>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="wrapper">
+          <h1 class="hero__headline">Organization is Everything</h1>
+          <h3 class="hero__sub-headline">
+            Don`t wait & start adding your tasks now!
+          </h3>
+          <a class="scroll down-arrow icon icon-lg" href="#tasks"></a>
+        </div>
+      </section>
+      <!-- Tasks -->
+      <section class="tasks" id="tasks">
+        <div class="wrapper">
+          <h2 class="tasks__headline">My Tasks</h2>
+          <div class="content">
+            <h3 class="tasks__sub-headline">
+              Your task list is empty, please add some!
+            </h3>
+            <form class="form tasks__form">
+              <input type="text" placeholder="Create a new todo..." required />
+              <div class="form-btns">
+                <button class="save" type="submit">Save</button>
+                <button class="cancel" type="button">Cancel</button>
+              </div>
+            </form>
+            <ul class="tasks__list"></ul>
+          </div>
+          <div class="add-up">
+            <a class="scroll up-arrow icon icon-lg" href="#tasks"></a>
+            <span class="add-icon icon icon-lg"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

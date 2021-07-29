@@ -1,0 +1,482 @@
+/*
+  =========================================
+
+  Project Name: Smart Todo
+  Creation date: 20 July 2021
+  Last modified: 23 July 2021
+  Description: a small stylesheet for fully responsive mobile friendly todo list app.
+  Version: 1.0
+  Author: Shaher Ashraf | shaherashraf77@gmail.com
+  Project URI: http: //www.name.com
+
+  ===========[TABLE OF CONTENTS]===========
+
+  1. BASE
+  -1.1. Fonts & CSS Reset [RES]
+  -1.2. Global Settings [GLO]
+  -1.3. Common Formatting [COM]
+  -1.4. Classes [CLA]
+  -----
+  2. CONTENT
+  -2.1. Wrapper [WRA]
+  -2.2. Header [HEA]
+  -2.3. Content [CON]
+  -2.4. Media Queries [MED]
+  
+  =========================================
+*/
+
+/* [RES]= Fonts & CSS Reset 
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap');
+@import url(normalize.css);
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* [GLO]= Global Settings 
+========================================== */
+:root {
+  /* || Colors */
+  /* Background Colors */
+  --clr-bg-pink: #16161a;
+  /* Text Colors */
+  --clr-txt-dark: #fecbca;
+  --clr-txt-pink: #16161a;
+  --clr-txt-secondary: #94a1b2;
+  /* Badges Colors */
+  --clr-badge-pink: #16161a;
+  --clr-badge-txt-pink: white;
+  --clr-badge-dark: #fecbca;
+  --clr-badge-txt-dark: white;
+
+  /* || Spacing */
+  /* Paddings */
+  --p-v-section: 6rem 0;
+
+  /* || Fonts */
+  --main-font: 'Philosopher', sans-serif;
+  --arabic-font: 'Almarai', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--main-font);
+  color: var(--clr-txt-pink);
+}
+
+/* [COM]= Common Formatting 
+========================================== */
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+label,
+input,
+button,
+textarea {
+  display: block;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+button,
+input[type='submit'] {
+  cursor: pointer;
+}
+
+/* [CLA]= Classes 
+========================================== */
+.icon {
+  cursor: pointer;
+  display: block;
+  max-width: 7.5rem;
+}
+
+.icon-sm {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.icon-md {
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon-lg {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.icon-xlg {
+  width: 7.5rem;
+  height: 7.5rem;
+}
+
+::selection {
+  color: var(--clr-txt-secondary);
+  background: var(--clr-txt-pink);
+}
+
+/* [WRA]= Wrapper 
+========================================== */
+.wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* [HEA]= Header 
+========================================== */
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: url(/images/pink-background.svg);
+}
+
+.header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0 1rem;
+}
+
+.desktop-cog {
+  display: none;
+}
+
+.cog-icon {
+  background: url(/images/icons/cog-pink.svg) no-repeat;
+}
+
+/* [CON]= Content 
+========================================== */
+main {
+  background: url(/images/pink-background.svg);
+  background-attachment: fixed;
+}
+
+section {
+  padding: var(--p-v-section);
+  min-height: 100vh;
+}
+
+/* || Configuration Section */
+.config {
+  display: none;
+}
+
+.cog li {
+  margin: 0 auto 4rem;
+}
+
+.volume-icon {
+  background: url(/images/icons/volume-mute-mobile-pink.svg) no-repeat;
+}
+
+.mode-icon {
+  background: url(/images/icons/mode-icon-mobile-pink.svg) no-repeat;
+}
+
+.lang {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: bold;
+}
+
+.active {
+  padding: 0.3rem 1.5rem;
+  border-radius: 30px;
+  background: var(--clr-badge-pink);
+  color: var(--clr-badge-txt-pink);
+}
+
+/* || Hero Section */
+.hero {
+  text-align: center;
+}
+
+.hero__headline {
+  font-size: clamp(4.8rem, calc(9 / 80 * 100vw), 12rem);
+}
+
+.hero__sub-headline {
+  font-size: clamp(3rem, calc(18 / 80 * 100vw), 3rem);
+  line-height: 1.5;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.hero__headline,
+.hero__sub-headline {
+  margin-bottom: 4rem;
+}
+
+.down-arrow {
+  background: url(/images/icons/arrow-down-pink.svg) no-repeat;
+  margin: 0 auto;
+}
+
+/* || Tasks Section */
+.tasks {
+  position: relative;
+}
+
+.tasks__headline {
+  text-align: center;
+  font-size: clamp(4.8rem, calc(9 / 80 * 100vw), 9.6rem);
+  margin: 6rem auto 6rem;
+}
+
+.tasks__sub-headline {
+  font-size: clamp(4.6rem, calc(9 / 80 * 100vw), 4.8rem);
+  font-weight: normal;
+  margin: 10rem auto 6rem;
+  width: 85%;
+}
+
+.add-up {
+  height: 16rem;
+  width: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: auto;
+}
+
+.add-icon,
+.up-arrow {
+  position: fixed;
+  display: none;
+}
+
+.add-icon {
+  background: url(/images/icons/add-pink.svg) no-repeat;
+  bottom: 6rem;
+}
+
+.up-arrow {
+  background: url(/images/icons/arrow-up-pink.svg) no-repeat;
+  bottom: 13rem;
+}
+
+/* tasks form */
+.tasks__form {
+  margin-top: 15rem;
+  width: 100%;
+}
+
+.tasks__form input[type='text'] {
+  width: 100%;
+  padding: 1.5rem;
+  color: var(--clr-txt-pink);
+  outline: 0;
+}
+
+input[type='text']:focus {
+  outline: 2px solid var(--clr-txt-pink);
+}
+
+.form-btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tasks__form button {
+  width: 9rem;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  padding: 0.5rem 0;
+  color: var(--clr-txt-pink);
+}
+
+button.save {
+  background: var(--clr-bg-pink);
+  color: white;
+}
+
+button.cancel {
+  background: white;
+  color: var(--clr-txt-pink);
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--clr-txt-secondary);
+}
+
+/* tasks list */
+.tasks__list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.tasks__list li input {
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  width: 75%;
+  background: none;
+  text-align: center;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: var(--clr-txt-secondary);
+}
+
+.check-icon {
+  background: url(/images/icons/unchecked-pink.svg) no-repeat;
+}
+
+.checked-icon {
+  background: url(/images/icons/checked-pink.svg) no-repeat;
+}
+
+.delete-icon {
+  background: url(/images/icons/delete-pink.svg) no-repeat;
+}
+
+.tasks__form,
+.tasks__list {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+/* [MED]= Media Queries 
+========================================== */
+/* || X-Small devices (phones, up to 330px) */
+@media (max-width: 330px) {
+  section {
+    word-break: break-all;
+  }
+}
+
+/* || Small devices (phones, 480px and up) */
+@media (min-width: 480px) {
+  .content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* || Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .content {
+    max-width: 80%;
+  }
+}
+
+/* || Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .content {
+    max-width: 70%;
+  }
+
+  .tasks__list li input {
+    font-size: 2.5rem;
+  }
+}
+
+/* || Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .config {
+    display: none;
+  }
+
+  .cog-icon {
+    display: none;
+  }
+
+  .desktop-cog {
+    display: initial;
+  }
+
+  .cog {
+    display: flex;
+    align-items: center;
+  }
+
+  .cog li {
+    margin-left: 2rem;
+    margin-bottom: 0;
+  }
+
+  .volume-icon {
+    background: url(/images/icons/volume-mute-pink.svg);
+  }
+
+  .mode-icon {
+    background: url(/images/icons/mode-icon-pink.svg);
+  }
+
+  .lang {
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+  }
+
+  .active {
+    padding: 0rem 0.8rem;
+  }
+
+  .hero {
+    padding-top: 0;
+  }
+
+  .hero__sub-headline {
+    font-size: clamp(2rem, calc(18 / 80 * 100vw), 2.5rem);
+    width: 25%;
+  }
+
+  .tasks__sub-headline {
+    width: 90%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .tasks__form input[type='text'] {
+    padding: 2rem;
+    font-size: 2rem;
+  }
+}
